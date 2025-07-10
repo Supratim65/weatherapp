@@ -268,8 +268,8 @@
                 if (!currentWeather.ok) throw new Error(currentData.message || 'Location not found');
                 
             
-                const forecast = await fetch(`${BASE_URL}/forecast?q=${location}&units=metric&appid=${API_KEY}`);
                 if (!forecast.ok) throw new Error(forecastData.message || 'Forecast data unavailable');
+                const forecast = await fetch(`${BASE_URL}/forecast?q=${location}&units=metric&appid=${API_KEY}`);
                 
                 const forecastData = await forecast.json();
                 
